@@ -1,10 +1,11 @@
 import { Box } from "@chakra-ui/react";
-import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
+import { flexRender, getCoreRowModel, getFilteredRowModel, useReactTable } from "@tanstack/react-table";
 import { useState } from "react";
 import DATA from "../data";
 import EditableCell from "./EditableCell";
 import StatusCell from "./StatusCell";
 import DateCell from "./DateCell";
+import Filters from "./Filters";
 const columns = [
   {
     accessorKey: 'task',
@@ -31,10 +32,16 @@ const columns = [
 ];
 const TaskTable = () => {
   const [data,setData] = useState(DATA);
+  const [columnFilters,setColumnFilters] = useState([
+  ]);
   const table = useReactTable({
     data,
     columns,
+    state:{
+      columnFilters,
+    },
     getCoreRowModel:getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
     columnResizeMode:"onChange",
     meta:{
       updateData: (rowIndex,columnId,value) => setData(
@@ -50,7 +57,13 @@ const TaskTable = () => {
     }
   });
   console.log(table.getHeaderGroups());
+  console.log("Data",data);
+  
   return <Box>
+    <Filters
+    columnFilters={columnFilters}
+    setColumnFilters={setColumnFilters}
+    />
     <Box className="table" w={table.getTotalSize()} >
   {table.getHeaderGroups().map(headerGroup => <Box className="tr" key={headerGroup.id}> 
     {headerGroup.headers.map(
