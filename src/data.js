@@ -17,7 +17,7 @@ const DATA = [
   {
     task: "Add a New Feature",
     status: STATUS_ON_DECK,
-    due: new Date("2023/10/15"),
+    due: new Date("2025/10/15"),
     notes: "This is a note",
   },
   {
@@ -35,7 +35,7 @@ const DATA = [
   {
     task: "Cleanup Database",
     status: null,
-    due: new Date("2023/02/15"),
+    due: new Date("2025/02/15"),
     notes: "Remove old data",
   },
   {
@@ -47,7 +47,7 @@ const DATA = [
   {
     task: "Add Documentation to API",
     status: null,
-    due: new Date("2023/09/12"),
+    due: new Date("2025/09/12"),
     notes: "Add JS Docs to all endpoints",
   },
   {
@@ -56,6 +56,65 @@ const DATA = [
     due: null,
     notes: "Upgrade React & Chakra UI",
   },
+  {
+    task: "Deploy to Production",
+    status: STATUS_DEPLOYED,
+    due: null,
+    notes: "",
+  },
+  {
+    task: "Add a New Feature",
+    status: STATUS_ON_DECK,
+    due: new Date("2025/10/15"),
+    notes: "This is a note",
+  },
+  {
+    task: "Write Integration Tests",
+    status: STATUS_IN_PROGRESS,
+    due: null,
+    notes: "Use Jest",
+  },
+  {
+    task: "Add Instagram Integration",
+    status: STATUS_DEPLOYED,
+    due: null,
+    notes: "",
+  },
+  {
+    task: "Cleanup Database",
+    status: null,
+    due: new Date("2025/02/15"),
+    notes: "Remove old data",
+  },
+  {
+    task: "Refactor API Endpoints",
+    status: STATUS_TESTING,
+    due: null,
+    notes: "",
+  },
+  {
+    task:"Clear Cache",
+    status: null,
+    due: new Date("2025/09/12"),
+    notes: "Add JS Docs to all endpoints",
+  },
+  {
+    task: "Fix Bugs",
+    status: STATUS_IN_PROGRESS,
+    due: null,
+    notes: "Upgrade React & Chakra UI",
+  },
+  {
+    task: "Make Changes to UI",
+    status: STATUS_DEPLOYED,
+    due: null,
+    notes: "",
+  },{
+    task: "Add a New Feature",
+    status: STATUS_ON_DECK,
+    due: new Date("2025/10/15"),
+    notes: "This is a note",
+  }
 ];
 
 export default DATA;
